@@ -1,0 +1,40 @@
+<html>
+
+    <style>
+        body { background: linear-gradient(to top left, #ac90d0,  #7f54b3); }
+    </style>
+
+    <body>
+     
+        <center>
+            <h1>Employee information system</h1>
+        </center>
+
+        <center>
+           
+                <form action="http://localhost:5000/deptEmployees" method="POST">
+                    <select name="dept">
+                        <option disabled selected> -- select an option --</option>
+                        <option value="HR">Human resources</option>
+                        <option value="IT">Information Technology</option>
+                        <option value="all">All Employees</option>
+                        
+                    </select>
+                    <input type="submit" value="Show">
+                </form>
+           
+            <a href="http://localhost:5000/newrecord">New employee</a>
+        </center>
+
+        <center>
+            {% for record in data %}
+            <tr>
+                <td>1</td>
+                <td><a href="http://localhost:5000/details/{{record[0]}}">{{record[1]}}</a></td>
+            </tr><br/>
+            {% endfor %}
+        </center>
+
+    </body>
+
+</html>

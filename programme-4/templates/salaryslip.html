@@ -1,0 +1,50 @@
+<html>
+
+    <style>
+        body { background: linear-gradient(to top left, #ac90d0,  #7f54b3); }
+    </style>
+
+    <body>
+
+        <h2><center>Salary slip</center></h2>
+
+        <center>
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td>{{name}}</td>
+                </tr>
+                <tr>
+                    <td>Salary:</td>
+                    <td>£{{salary}}</td>
+                </tr>
+                <tr>
+                    <td>Tax rate:</td>
+                    {% if salary>=2000 %}
+                    <td>20%</td>
+                    {% else %}
+                    <td>15%</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>Tax:</td>
+                    {% if salary>=2000 %}
+                    <td>£{{salary*20/100}}</td>
+                    {% else %}
+                    <td>£{{salary*15/100}}</td>
+                    {% endif %}
+                </tr>
+                <tr>
+                    <td>Net salary:</td>
+                    {% if salary>=2000 %}
+                    <td>£{{salary-(salary*20/100)}}</td>
+                    {% else %}
+                    <td>£{{salary-(salary*15/100)}}</td>
+                    {% endif %}
+                </tr>
+            </table>
+        </center>
+        
+    </body>
+
+</html>

@@ -1,0 +1,35 @@
+<html>
+
+    <style>
+        body { background: linear-gradient(to top left, #ac90d0,  #7f54b3); }
+    </style>
+
+    <body>
+        
+        <center>
+            {% for record in personal %}
+            <h1>Name of employee: <font color="green">{{record[1]}}</font></h1>
+            <h2>Department: {{record[2]}}</h2>
+            {% endfor %}
+
+        </center>
+
+        <center>
+            Salary details:<br />
+  
+            {% for rec in accounts %}
+
+            {{rec[1]}},{{rec[2]}}<br />
+
+            {% endfor %}
+
+        </center>
+
+        <center>
+            <h3>Employee salary</h3>
+            <a href="http://localhost:5000/salary">New salary</a>
+        </center>
+
+    </body>
+
+</html>

@@ -1,0 +1,39 @@
+<html>
+
+    <style>
+        body { background: linear-gradient(to top left, #ac90d0,  #7f54b3); }
+    </style>
+
+    <script>
+            function checkData(){
+                let answer = true;
+             
+                if (a.value==""){
+                   
+                    numError1.style.visibility="visible";
+                    answer = false;
+                } else{
+                numError1.style.visibility="hidden";
+                }
+                if (b.value==""){
+                    numError2.style.visibility="visible";
+                    answer = false;
+                } else{
+                numError2.style.visibility="hidden";
+                }
+                
+                return answer;
+            }
+    </script>
+
+    <body>
+        
+        <form action="http://localhost:5000/data" method="POST" onsubmit="return checkData()">
+            Enter first number:<input id="a" type="text" name="num1"><span id="numError1" style="color: orangered; visibility: hidden;">Number is missing</span><br>
+            Enter second number:<input id="b" type="text" name="num2"><span id="numError2" style="color: orangered; visibility: hidden;">Number is missing</span><br>
+            <input type="submit" value="ok">
+        </form>
+
+    </body>
+
+</html>

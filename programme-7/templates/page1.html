@@ -1,0 +1,23 @@
+<html>
+
+    <style>
+        body { background: linear-gradient(to top left, #ac90d0,  #7f54b3); }
+    </style>
+
+    <body>
+        
+        <center>
+            <h2>Times table of {{TimesTable}}</h2>
+            <h3>Select range</h3>
+        </center>
+        <br>
+        <br>
+        <center>
+            {% for i in range(1,100) %}
+            <a href="http://localhost:5000/page3/{{i}}">{{i}}</a><br>
+            {% endfor %}
+        </center>
+
+    </body>
+
+</html>
